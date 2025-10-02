@@ -1,0 +1,471 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*==========================
+トップ
+.p-top
+==========================*/
+.p-top {
+  //about
+  &-about {
+    margin: 80px;
+    &__list {
+      @include flexStyle;
+      gap: 40px;
+      flex-direction: column;
+      margin-top: 40px;
+    }
+    &__item {
+      @include flexStyle;
+      gap: 50px;
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+    &__split {
+      width: 50%;
+    }
+    &__letter {
+      text-align: left;
+      &Tit {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 120%;
+      }
+      &Txt {
+        margin-top: 20px;
+      }
+    }
+    &__img {
+    }
+  }
+
+  //skill
+  &-skill {
+    padding-bottom: 120px;
+    text-align: left;
+    @include mq(sp) {
+      padding-bottom: 60px;
+    }
+    &__inner {
+      max-width: 1268px;
+      padding: 0 20px;
+      margin: 0 auto;
+      @include mq(sp) {
+        max-width: initial;
+      }
+    }
+    &__tit {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 600;
+      @include mq(sp) {
+        font-size: 24px;
+      }
+    }
+    &__list {
+      @include flexStyle();
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 64px;
+      @include mq(sp) {
+        gap: 16px;
+        margin-top: 40px;
+      }
+    }
+    &__item {
+      @include flexStyle();
+      border-bottom: 1px solid #bfbfbf;
+      padding-bottom: 16px;
+      &Tit {
+        font-size: 16px;
+        line-height: 150%;
+        width: 200px;
+        @include mq(sp) {
+          flex-shrink: 0;
+          width: 120px;
+          font-size: 14px;
+        }
+      }
+      &Txt {
+        font-size: 16px;
+        line-height: 150%;
+        @include mq(sp) {
+          font-size: 14px;
+        }
+      }
+      &Link {
+        font-size: 16px;
+        line-height: 150%;
+        @include ankerStyle($text-base-color);
+        @include hvopa;
+        text-decoration: underline;
+        @include mq(sp) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &-service {
+    padding: 80px 0;
+    background-image: url(#{$imgPath}img/top/greetingBk.jpg);
+    background-position: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    @include mq(sp) {
+      padding: 60px 0;
+    }
+    &__inner {
+      width: 100%;
+      max-width: 1124px;
+      margin: 0 auto;
+      padding: 0 15px;
+      position: relative;
+      z-index: 100;
+      @include mq(sp) {
+        max-width: initial;
+        padding: 0;
+      }
+    }
+    &__wrap {
+      margin-top: 40px;
+      position: relative;
+    }
+    &__link {
+      @include flexStyle(center, center);
+      flex-direction: column;
+      width: 250px;
+      height: 250px;
+      padding: 20px;
+      transition: 0.3s;
+      background-color: $white-color;
+      @include ankerStyle($main-color);
+      @include mq(tb) {
+        width: setSingleVal(250, 1280, vw);
+        height: setSingleVal(250, 1280, vw);
+      }
+      @include mq(sp) {
+        width: setSingleVal(220, 375, vw);
+        height: setSingleVal(220, 375, vw);
+      }
+      &:hover {
+        @include ankerStyle($white-color);
+        background-color: $main-color;
+        transition: 0.3s;
+      }
+      &Main {
+        font-size: 20px;
+        @include mq(tb) {
+          font-size: 18px;
+        }
+      }
+      &Sub {
+        display: block;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+    .swiper-container__service {
+      overflow: hidden;
+      padding: 20px 0;
+      @include mq(sp) {
+        padding: 10px 0;
+      }
+    }
+    .swiper-parts {
+      .swiper-pagination {
+        bottom: -30px;
+      }
+      /* ページネーションの余白 */
+      .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+      .swiper-pagination-horizontal.swiper-pagination-bullets
+        .swiper-pagination-bullet {
+        margin: 0 10px;
+      }
+
+      /* ページネーションのサイズと色 */
+      .swiper-pagination-bullet {
+        opacity: 1;
+        background-color: $white-color;
+        height: 10px;
+        width: 10px;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: $black-color;
+      }
+      .swiper-button-disabled {
+        display: none;
+      }
+    }
+    .m-button {
+      margin-top: 80px;
+      @include mq(sp) {
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 40px;
+      }
+      &Link {
+        @include mq(sp) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  //information
+  &-information {
+    padding: 80px 0;
+    background-color: $main-color;
+    @include mq(sp) {
+      padding: 60px 0;
+    }
+    &__list {
+      display: flex;
+      gap: 32px;
+      margin-top: 40px;
+      @include mq(sp) {
+        gap: initial;
+        margin-top: 30px;
+      }
+      &Item {
+        @include mq(sp) {
+          padding-right: 20px;
+        }
+      }
+    }
+    .l-tab {
+      margin-top: 30px;
+    }
+    .simplebar-content {
+      display: flex;
+      gap: 32px;
+      @include mq(sp) {
+        display: flex;
+        gap: initial;
+      }
+      &:before,
+      &:after {
+        content: none;
+        @include mq(sp) {
+          content: "";
+        }
+      }
+    }
+    .m-button {
+      margin-top: 40px;
+      @include mq(sp) {
+        width: 100%;
+      }
+      &Link {
+        @include mq(sp) {
+          width: 100%;
+          font-size: 18px;
+        }
+      }
+    }
+    .m-noposts {
+      color: $white-color;
+    }
+  }
+
+  // &-instagram {
+  //   padding: 80px 0 90px;
+  //   @include mq(sp) {
+  //     @include pratio((60, 0), 375, vw);
+  //   }
+  //   &__content {
+  //     margin-top: 40px;
+  //     @include mq(sp) {
+  //       margin-top: setSingleVal(40, 375, vw);
+  //     }
+  //   }
+  //   &__link {
+  //     @include flexStyle(center, center);
+  //     margin-top: 40px;
+  //     @include hvopa;
+  //     @include mq(sp) {
+  //       margin-top: setSingleVal(20, 375, vw);
+  //     }
+  //     &Icon {
+  //       width: 60px;
+  //       @include mq(sp) {
+  //         width: setSingleVal(60, 375, vw);
+  //       }
+  //     }
+  //     &Txt {
+  //       margin-left: 14px;
+  //       text-align: left;
+  //       font-size: 18px;
+  //       @include line-height-calc(28, 18);
+  //       @include mq(sp) {
+  //         margin-left: setSingleVal(14, 375, vw);
+  //         @include line-height-calc(26, 16);
+  //         @include font-vw(16, 375);
+  //       }
+  //     }
+  //   }
+  // }
+
+  &-company {
+    padding: 80px 0 90px;
+    @include mq(sp) {
+      padding: 60px 0;
+    }
+    &__list {
+      background-color: #f5f2ec;
+      text-align: left;
+      padding: 60px;
+      margin-top: 40px;
+      @include mq(sp) {
+        padding: 20px;
+      }
+      &Item {
+        @include mq(sp) {
+          display: flex;
+          align-items: flex-start;
+        }
+        &::before {
+          content: attr(data-index);
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          color: $white-color;
+          width: 30px;
+          height: 30px;
+          font-size: 20px;
+          flex-shrink: 0;
+          background-color: $main-color;
+          @include mq(sp) {
+            width: auto;
+            height: auto;
+            font-size: 18px;
+            width: 24px;
+            height: 24px;
+            letter-spacing: 0;
+          }
+        }
+        &:not(:first-of-type) {
+          margin-top: 20px;
+        }
+      }
+      &Text {
+        padding-left: 10px;
+        font-size: 24px;
+        @include mq(sp) {
+          font-size: 18px;
+        }
+      }
+    }
+    &__data {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      @include mq(sp) {
+        display: block;
+        margin-top: 40px;
+      }
+      &Img {
+        width: 45.7%;
+        @include mq(sp) {
+          width: 100%;
+        }
+      }
+      &List {
+        width: 54.3%;
+        padding-left: 4.3%;
+        @include mq(sp) {
+          width: 100%;
+          padding-left: 0;
+          margin-top: 40px;
+        }
+        &Table {
+          text-align: left;
+          @include mq(sp) {
+            display: block;
+          }
+          tbody {
+            @include mq(sp) {
+              display: block;
+            }
+          }
+          th,
+          td {
+            padding: 20px 0;
+            border-bottom: 1px solid $border-base-color;
+            font-size: 16px;
+            @include mq(sp) {
+              display: block;
+              border-bottom: none;
+              padding: 0;
+            }
+          }
+          th {
+            font-weight: normal;
+            width: 200px;
+            @include mq(tb) {
+              width: 100px;
+            }
+            @include mq(sp) {
+              width: 100%;
+            }
+          }
+          td {
+            @include mq(sp) {
+              margin-top: 10px;
+              @include letter-spacing-calc(60);
+            }
+          }
+          tr {
+            @include mq(sp) {
+              display: block;
+              border-bottom: 1px solid $border-base-color;
+              padding: 20px 0;
+            }
+            &:first-of-type {
+              @include mq(sp) {
+                border-top: 1px solid $border-base-color;
+              }
+              th,
+              td {
+                border-top: 1px solid $border-base-color;
+                @include mq(sp) {
+                  border-top: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__map {
+      padding-top: 60px;
+      &Doboz {
+        width: 100%;
+        height: 400px;
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &Txt {
+        margin-top: 20px;
+        text-align: left;
+        @include mq(sp) {
+          margin-top: 10px;
+          @include letter-spacing-calc(40);
+        }
+      }
+    }
+  }
+
+  &-contact {
+    padding: 120px 0;
+    background-color: #f2f3f5;
+    @include mq(sp) {
+      padding: 60px 0;
+    }
+  }
+}

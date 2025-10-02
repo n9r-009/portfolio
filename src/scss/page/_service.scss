@@ -1,0 +1,237 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*==========================
+サービスページ共通
+.p-service
+==========================*/
+.p-service {
+  .l-main__spacer {
+    padding: 80px 0 0;
+    @include mq(sp) {
+      padding: 80px 0;
+    }
+  }
+
+  &-menu {
+    padding: 100px 0;
+    @include mq(sp) {
+      padding: 80px 0;
+    }
+    &__note {
+      text-align: left;
+      margin-top: 24px;
+      @include mq(sp) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-upper {
+    &__letter {
+      &Txt {
+        font-size: 18px;
+        @include mq(sp) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &-kind {
+    padding: 80px 0;
+    background-color: #efefef;
+    .l-tag {
+      margin-top: 40px;
+    }
+    &__split {
+      &:nth-of-type(n + 2) {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  &-feature {
+    padding: 100px 0;
+    @include mq(sp) {
+      padding: 80px 0;
+    }
+    &__doboz {
+      @include flexStyle($align-items: center);
+      gap: 70px;
+      margin-top: 65px;
+      @include mq(tb_hmb) {
+        flex-direction: column;
+        gap: 30px;
+      }
+      @include mq(sp) {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 40px;
+      }
+      &:nth-of-type(even) {
+        flex-direction: row-reverse;
+        @include mq(tb_hmb) {
+          flex-direction: column;
+        }
+        @include mq(sp) {
+          flex-direction: column;
+        }
+      }
+      &Img {
+        width: 540px;
+        flex-shrink: 0;
+        @include mq(tb_hmb) {
+          width: 100%;
+        }
+        @include mq(sp) {
+          width: 100%;
+        }
+        img {
+          object-fit: cover;
+          @include mq(tb_hmb) {
+            max-height: 400px;
+          }
+        }
+      }
+      &Letter {
+        text-align: left;
+        width: 100%;
+        &Txt {
+        }
+      }
+    }
+    &__txt {
+      margin-top: 60px;
+      text-align: left;
+      @include line-height-calc(32, 16);
+      @include mq(sp) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &-results {
+    background-color: $bg-grey-color;
+    padding: 120px 0;
+    @include mq(sp) {
+      padding: 80px 0;
+    }
+    &__letter {
+      margin-top: 65px;
+      &Txt {
+      }
+    }
+  }
+
+  &-trouble {
+    padding: 100px 0;
+    background-color: #f5f2ec;
+    @include mq(sp) {
+      padding: 80px 0;
+    }
+    &__list {
+      @include flexStyle;
+      flex-direction: column;
+      gap: 20px;
+      background-color: $white-color;
+      padding: 70px;
+      margin-top: 40px;
+      @include mq(sp) {
+        padding: 35px;
+      }
+    }
+    &__item {
+      position: relative;
+      padding-left: 20px;
+      text-align: left;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $main-color;
+      }
+    }
+    .m-tit__ja {
+      @include mq(sp) {
+        font-size: 22px;
+        letter-spacing: 0;
+      }
+    }
+  }
+  &-detail {
+    padding: 100px 0;
+    @include mq(sp) {
+      padding: 80px 0px;
+    }
+    &__inner {
+      max-width: 700px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+  }
+  &-free {
+    padding: 100px 0;
+    @include mq(sp) {
+      padding: 80px 0;
+    }
+    &__doboz {
+      @include flexStyle($align-items: center);
+      gap: 70px;
+      margin-top: 65px;
+      @include mq(tb_hmb) {
+        flex-direction: column;
+        gap: 30px;
+      }
+      @include mq(sp) {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 40px;
+      }
+      &:nth-of-type(even) {
+        flex-direction: row-reverse;
+        @include mq(tb_hmb) {
+          flex-direction: column;
+        }
+        @include mq(sp) {
+          flex-direction: column;
+        }
+      }
+      &Img {
+        width: 540px;
+        flex-shrink: 0;
+        @include mq(tb_hmb) {
+          width: 100%;
+        }
+        @include mq(sp) {
+          width: 100%;
+        }
+        img {
+          object-fit: cover;
+          @include mq(tb_hmb) {
+            max-height: 400px;
+          }
+        }
+      }
+      &Letter {
+        text-align: left;
+        width: 100%;
+        &Txt {
+        }
+      }
+    }
+    &__txt {
+      margin-top: 60px;
+      text-align: left;
+      @include line-height-calc(32, 16);
+      @include mq(sp) {
+        margin-top: 30px;
+      }
+    }
+  }
+}

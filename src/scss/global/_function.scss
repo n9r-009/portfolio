@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@use "sass:map";
+@use "sass:math";
+
+// ----------------------------
+// setSingleVal
+// 割合の計算(単体)
+// $val => デザイン上の余白、フォントサイズなど
+// $w => ブロックの幅
+// $u => 単位
+// ------------------------------
+@function setSingleVal($val, $w: 1366, $u: "%") {
+  @return #{calcResult($val, $w)}#{$u};
+}
+
+// ----------------------------
+// calcResult
+// 割合の計算
+// $val => デザイン上の余白、フォントサイズなど
+// $w => ブロックの幅
+// ------------------------------
+@function calcResult($val, $w) {
+  @return math.div($val, $w) * 100;
+}
+

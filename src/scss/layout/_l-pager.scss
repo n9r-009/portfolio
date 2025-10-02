@@ -1,0 +1,84 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+.l-pager
+============================*/
+.l-pager {
+  $parent: &;
+  margin-top: 120px;
+  &--switch {
+    #{$parent}__list {
+      @include flexStyle(space-between, center);
+      width: 100%;
+      @include mq() {
+        flex-wrap: wrap;
+      }
+      #{$parent}__button {
+        transition: 0.3s;
+        @include hvopa;
+        &:first-of-type {
+          @include mq(sp) {
+            order: 2;
+          }
+        }
+        &:nth-of-type(2) {
+          @include mq(sp) {
+            padding-bottom: 40px;
+            width: 100%;
+            order: 1;
+          }
+        }
+        &:last-of-type {
+          text-align: right;
+          @include mq(sp) {
+            order: 3;
+          }
+          #{$parent}Link {
+            justify-content: flex-end;
+          }
+        }
+        .m-buttonLink {
+          @include mq(sp) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &__button {
+    &Prev,
+    &Next {
+      font-size: 18px;
+      display: inline-block;
+      height: 100%;
+      @include ankerStyle($text-base-color);
+      transition: 0.3s;
+      @include mq(sp) {
+        font-size: 16px;
+      }
+    }
+    &Prev {
+      &:before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid $main-color;
+        border-bottom: 1px solid $main-color;
+        display: inline-block;
+        transform: rotate(45deg);
+      }
+    }
+    &Next {
+      &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-right: 1px solid $main-color;
+        border-top: 1px solid $main-color;
+        display: inline-block;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

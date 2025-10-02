@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+.l-tag
+============================*/
+.l-tag {
+  &__inner {
+    max-width: 660px;
+    margin: 0 auto;
+    @include mq(sp) {
+      max-width: initial;
+    }
+  }
+  &__list {
+    @include flexStyle(center, center);
+    gap: 10px;
+    flex-wrap: wrap;
+    @include mq(sp) {
+      justify-content: flex-start;
+    }
+  }
+  &__item {
+    border-radius: 30px;
+    background-color: $white-color;
+    padding: 8px 10px 8px 10px;
+    text-align: left;
+    &Txt {
+      line-height: 1.2;
+      @include mq(sp) {
+        font-size: 12px;
+      }
+    }
+  }
+}

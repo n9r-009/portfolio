@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+m-pagetop
+============================*/
+.m-pagetop {
+  @include formReset_button();
+  position: fixed;
+  display: none;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  top: auto;
+  bottom: 40px;
+  left: auto;
+  right: 20px;
+  background: url(#{$imgPath}img/global/footer/m-pagetop.svg) no-repeat left top;
+  background-size: contain;
+  z-index: 999;
+  cursor: pointer;
+  @include hvopa();
+  @include mq(sp) {
+    width: 35px;
+    height: 35px;
+  }
+}

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+.l-container
+============================*/
+.l-container {
+  overflow: hidden;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  /* IE11 */
+  @include onlyBrowser(ie11) {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+}

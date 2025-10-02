@@ -1,0 +1,58 @@
+{
+  "private": true,
+  "name": "tmp",
+  "config": {
+    "dist": "./dist/wp-content/themes/portfolio2025",
+    "tmp": "./tmp/css",
+    "src": "./src/scss"
+  },
+  "engines": {
+    "node": "14.16.1",
+    "npm": "7.10.0"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "not dead"
+  ],
+  "scripts": {
+    "start": "run-s clean copy build dev babel",
+    "release": "run-s clean copy release:css",
+    "dev": "run-p bs watch babel:*",
+    "bs": "browser-sync start --config bs-config.js",
+    "build": "run-s build:css",
+    "watch": "run-p watch:css",
+    "babel": "./node_modules/.bin/babel src --out-dir $npm_package_config_dist/assets",
+    "clean": "run-s clean:*",
+    "clean:css": "rimraf $npm_package_config_dist/assets/css/**/*",
+    "clean:tmp": "rimraf $npm_package_config_tmp**/*",
+    "copy": "run-s copy:*",
+    "build:sass": "sass $npm_package_config_src:tmp/css --no-source-map --style=expanded",
+    "watch:sass": "sass $npm_package_config_src:tmp/css --no-source-map --style=expanded -w",
+    "babel:watch": "./node_modules/.bin/babel src --out-dir $npm_package_config_dist/assets/ --watch",
+    "release:sass": "sass $npm_package_config_src:tmp/css --no-source-map --style=expanded",
+    "build:ap": "postcss $npm_package_config_tmp --use mqpacker autoprefixer --base $npm_package_config_tmp -d $npm_package_config_dist/assets/css/ --no-map",
+    "watch:ap": "postcss $npm_package_config_tmp --use mqpacker autoprefixer --base $npm_package_config_tmp -d $npm_package_config_dist/assets/css/ --no-map -w",
+    "release:ap": "postcss $npm_package_config_tmp --use mqpacker autoprefixer --base $npm_package_config_tmp -d $npm_package_config_dist/assets/css/ --no-map",
+    "build:css": "run-s build:sass build:ap",
+    "watch:css": "run-p watch:sass watch:ap",
+    "release:css": "run-s release:sass release:ap"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.13",
+    "cpx": "^1.2.1",
+    "mqpacker": "^7.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.1.0",
+    "prettier": "^2.2.1",
+    "prettier-stylelint": "^0.4.2",
+    "rimraf": "^3.0.2",
+    "sass": "^1.39.2",
+    "stylelint": "^13.8.0",
+    "stylelint-config-recess-order": "^2.3.0"
+  }
+}

@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+.l-tab
+============================*/
+.l-tab {
+  $parent: &;
+  &--black {
+    padding-bottom: 60px;
+    @include mq(sp) {
+      padding: 0 20px 60px;
+    }
+    #{$parent}__switch {
+      &Item {
+        @include ankerStyle(#bec2cb);
+        border-color: #bec2cb;
+        font-size: 20px;
+        width: 120px;
+        &.is-active {
+          @include ankerStyle($main-color);
+          border-color: $main-color;
+        }
+        &:hover {
+          @include ankerStyle($main-color);
+          border-color: $main-color;
+        }
+      }
+    }
+  }
+  &__switch {
+    @include flexStyle(center, center);
+    gap: 30px;
+    @include mq(sp) {
+      gap: 20px;
+    }
+    &Item {
+      width: 80px;
+      font-size: 18px;
+      border-bottom: 2px solid $white-color;
+      color: $white-color;
+      transition: 0.3s;
+      padding-bottom: 8px;
+      &.is-active {
+        color: $ocher-color;
+        border-color: $ocher-color;
+      }
+      &:hover {
+        color: $ocher-color;
+        border-color: $ocher-color;
+        transition: 0.3s;
+      }
+    }
+  }
+  &__main {
+    &Item {
+      @include simplebarCustom(1, $white-color);
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .simplebar-track.simplebar-horizontal {
+        top: auto;
+        @include mq(tb_hmb) {
+          bottom: -20px;
+        }
+        @include mq(sp) {
+          bottom: -10px;
+        }
+      }
+    }
+  }
+}

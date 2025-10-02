@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+.l-table
+============================*/
+.l-table {
+  text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  @include mq(tb_hmb) {
+    table-layout: fixed;
+  }
+  @include mq(sp) {
+    width: 100%;
+    table-layout: fixed;
+  }
+  th,
+  td {
+    padding: 20px 0;
+    border-bottom: 1px solid $border-base-color;
+
+    @include mq(tb_hmb) {
+      display: block;
+      border-bottom: none;
+      padding: 0;
+    }
+    @include mq(sp) {
+      display: block;
+      border-bottom: none;
+      padding: 0;
+      font-size: 14px;
+    }
+  }
+  th {
+    width: 200px;
+    padding-left: 20px;
+    @include fontStyle;
+    @include mq(tb_hmb) {
+      width: 100%;
+    }
+    @include mq(sp) {
+      width: 100%;
+    }
+  }
+  td {
+    @include mq(tb_hmb) {
+      margin-top: 10px;
+    }
+    @include mq(sp) {
+      margin-top: 10px;
+    }
+  }
+  tr {
+    @include mq(tb_hmb) {
+      display: block;
+      border-bottom: 1px solid $border-base-color;
+      padding: 20px 0;
+    }
+    @include mq(sp) {
+      display: block;
+      border-bottom: 1px solid $border-base-color;
+      padding: 20px 0;
+    }
+    &:first-of-type {
+      @include mq(tb_hmb) {
+        border-top: 1px solid $border-base-color;
+      }
+      @include mq(sp) {
+        border-top: 1px solid $border-base-color;
+      }
+      th,
+      td {
+        border-top: 1px solid $border-base-color;
+        @include mq(tb_hmb) {
+          border-top: none;
+        }
+        @include mq(sp) {
+          border-top: none;
+        }
+      }
+    }
+  }
+  // &__box {
+  //   border: 1px solid $border-base-color;
+  //   border-top: 6px solid $darkgreen-color;
+  //   background-color: $white-color;
+  //   padding: 30px;
+  //   margin-top: 70px;
+  //   @include mq(sp) {
+  //     padding: 15px;
+  //     margin-top: 40px;
+  //   }
+  //   &List {
+  //   }
+  //   &Item {
+  //     text-align: left;
+  //     &:nth-of-type(n + 2) {
+  //       margin-top: 20px;
+  //     }
+  //     &Tit {
+  //       @include mq(sp) {
+  //         font-size: 14px;
+  //       }
+  //     }
+  //     &Txt {
+  //       @include mq(sp) {
+  //         font-size: 14px;
+  //       }
+  //     }
+  //   }
+  // }
+}

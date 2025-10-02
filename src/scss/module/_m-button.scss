@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+m-button
+============================*/
+.m-button {
+  $m-button: &;
+  display: inline-block;
+  &Link {
+    position: relative;
+    @include flexStyle(center, center);
+    width: 300px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0px 1px 0px 2px $border-base-color;
+    background-color: $white-color;
+    font-size: 18px;
+    line-height: 1em;
+    @include ankerStyle($text-base-color);
+    @include hvopa;
+    @include mq(sp) {
+      width: 220px;
+      height: 50px;
+      font-size: 16px;
+      border-radius: 30px;
+    }
+    &--contact {
+      box-shadow: initial;
+      width: 160px;
+      height: 40px;
+      font-size: 16px;
+      background-color: $ocher-color;
+      @include ankerStyle($white-color);
+      &:before {
+        content: "";
+        display: block;
+        width: 17px;
+        height: 13px;
+        background-image: url(#{$imgPath}img/global/mail--white.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-right: 10px;
+        @include mq(sp) {
+          width: 20px;
+          height: 15px;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

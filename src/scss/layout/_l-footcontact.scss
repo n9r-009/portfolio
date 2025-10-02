@@ -1,0 +1,52 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+.l-footcontact
+============================*/
+.l-footcontact {
+  background-color: #efefef;
+  &__inner {
+    padding: 75px 20px 100px;
+    width: 100%;
+    max-width: 1136px;
+    margin: 0 auto;
+    @include mq(sp) {
+      max-width: 100%;
+      padding: 55px 20px;
+    }
+  }
+  &__txt {
+    margin-top: 50px;
+    @include mq(sp) {
+      margin-top: 30px;
+      font-size: 16px;
+    }
+  }
+  &__doboz {
+    margin-top: 40px;
+    @include mq(sp) {
+      margin-top: 35px;
+    }
+    .m-button {
+      @include mq(sp) {
+        width: 100%;
+      }
+      &Link {
+        width: 400px;
+        height: 80px;
+        border-radius: 40px;
+        font-size: 24px;
+        &:before {
+          margin-top: 5px;
+          margin-right: 20px;
+        }
+        @include mq(sp) {
+          width: 100%;
+          height: 60px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

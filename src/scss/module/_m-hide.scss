@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+m-hide
+============================*/
+.m-hide {
+  &--sp {
+    @include mq(sp){
+      display: none;
+    }
+  }
+  &--pc {
+    display: none;
+    @include mq(sp){
+      display: block;
+    }
+  }
+}

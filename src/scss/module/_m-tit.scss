@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+m-tit
+============================*/
+.m-tit {
+  $m-tit: &;
+  text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  &--white {
+    color: $white-color;
+  }
+}

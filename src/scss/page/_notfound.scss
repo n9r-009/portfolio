@@ -1,0 +1,24 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*==========================
+404
+.p-notfound
+==========================*/
+.p-notfound {
+  .l-main__spacer {
+    padding: 60px 0 100px;
+    @include mq(sp) {
+      padding: 50px 0 80px;
+    }
+  }
+  &__body {
+    &Txt {
+      margin-top: 40px;
+      line-height: 1.5;
+      @include mq(sp) {
+        font-size: 16px;
+      }
+    }
+  }
+}

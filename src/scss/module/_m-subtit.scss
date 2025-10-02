@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+m-subtit
+============================*/
+.m-subtit {
+  $m-subtit: &;
+  &__ja {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    // color: $primary-sab-color;
+    @include letter-spacing-calc(80);
+    @include line-height-calc(64, 24);
+    // @include addfont_ZenMaruGothic;
+    // border-bottom: 1px solid $primary-sab-color;
+    @include mq(sp) {
+      font-size: 18px;
+      @include letter-spacing-calc(40);
+    }
+  }
+}

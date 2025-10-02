@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+.l-section
+============================*/
+.l-section {
+  &__inner {
+    width: 100%;
+    max-width: 1136px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @include mq(sp) {
+      max-width: 100%;
+    }
+  }
+}

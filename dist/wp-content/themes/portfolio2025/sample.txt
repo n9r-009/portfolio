@@ -1,0 +1,3 @@
+sarfariでjavascipt:void(0)に対してポップアップが毎回出てしまうので以下にする
+href="javascipt:void(0)"
+=> href="javascipt:void(0)" onClick="return false;"

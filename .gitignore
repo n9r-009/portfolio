@@ -1,0 +1,20 @@
+.env
+changed_files.zip
+changed_files
+dist 2
+/node_modules/
+/tmp/
+/dist/*
+!/dist/common-js-sample
+!/dist/common-parts-view
+!/dist/wp-content/
+/dist/wp-content/*
+!/dist/wp-content/themes/
+/dist/wp-content/themes/*
+!/dist/wp-content/themes/portfolio2025/
+/dist/wp-content/themes/portfolio2025/assets/
+!/dist/wp-content/themes/portfolio2025/assets/
+/dist/wp-content/themes/portfolio2025/assets/css/
+!/dist/wp-content/themes/portfolio2025/assets/js/
+/dist/wp-content/themes/portfolio2025/assets/js/*
+!/dist/wp-content/themes/portfolio2025/assets/js/libs/

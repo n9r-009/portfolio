@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*==========================
+プライバシーポリシー
+.p-privacy
+==========================*/
+.p-privacy {
+  .l-main__spacer {
+    padding: 80px 0 150px;
+    @include mq(sp) {
+      padding: 40px 0 120px;
+    }
+  }
+  &-content {
+    &__inner {
+      text-align: left;
+    }
+    &__txt {
+      @include line-height-calc(32, 16);
+      @include mq(sp) {
+        font-size: 16px;
+      }
+    }
+    &__item {
+      h2 {
+        margin-top: 70px;
+        font-size: 24px;
+        color: $main-color;
+        border-bottom: 1px solid $border-base-color;
+        padding-bottom: 11px;
+        margin-bottom: 24px;
+        @include mq(sp) {
+          font-size: 24px;
+          margin-top: 60px;
+          padding-bottom: 12px;
+          margin-bottom: 20px;
+        }
+      }
+      h3 {
+        margin-top: 30px;
+        font-size: 14px;
+        @include line-height-calc(32, 16);
+        @include mq(sp) {
+          font-size: 14px;
+          margin-top: 30px;
+        }
+      }
+      h4 {
+        margin-top: 30px;
+        font-size: 14px;
+        @include line-height-calc(32, 16);
+        @include mq(sp) {
+          font-size: 14px;
+          margin-top: 30px;
+        }
+      }
+      &Txt {
+        margin-top: 30px;
+        @include line-height-calc(32, 16);
+        @include mq(sp) {
+          font-size: 16px;
+          margin-top: 30px;
+        }
+        &--nospace {
+          margin-top: 0;
+          @include mq(sp) {
+            margin-top: 0;
+          }
+        }
+        &Link {
+          @include ankerStyle($black-color);
+          border-bottom: 1px solid $black-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+.l-flow
+============================*/
+.l-flow {
+  $parent: &;
+  &__list {
+    margin-top: 65px;
+    &--dot {
+      #{$parent}__item {
+        &Letter {
+          &Txt {
+            position: relative;
+            padding-left: 20px;
+            &:before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 10px;
+              display: block;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background-color: $main-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__item {
+    @include flexStyle;
+    border: 1px solid $main-color;
+    border-left: 6px solid $main-color;
+    padding: 40px;
+    gap: 40px;
+    @include mq(sp) {
+      flex-direction: column;
+      text-align: left;
+      gap: 10px;
+      padding: 25px;
+    }
+    &:nth-of-type(n + 2) {
+      margin-top: 24px;
+      @include mq(sp) {
+        margin-top: 40px;
+      }
+    }
+    &--pccenter {
+      align-items: center;
+      @include mq(sp) {
+        align-items: stretch;
+      }
+    }
+    &Num {
+      font-size: 32px;
+      @include addfont_CormorantGaramond;
+      line-height: 1.2;
+      @include letter-spacing-calc(120);
+      @include mq(sp) {
+        font-size: 28px;
+      }
+    }
+    &Letter {
+      text-align: left;
+      &Tit {
+        font-size: 28px;
+        @include mq(sp) {
+          font-size: 18px;
+        }
+      }
+      &Txt {
+        margin-top: 8px;
+        @include mq(sp) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*============================
+m-card-icon
+============================*/
+.m-card-icon {
+  $parent: &;
+  box-shadow: 0px 2px 0px 4px #d3d3d3;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: $white-color;
+  @include mq(sp) {
+    box-shadow: 0px 1px 0px 2px #d3d3d3;
+  }
+  &__link {
+    display: block;
+    padding: 30px 0 40px;
+  }
+  &__img {
+    width: 120px;
+    margin: 0 auto;
+    @include thumbnail_aspect(120, 120, cover);
+  }
+  &__tit {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-top: 20px;
+    padding: 0 10px;
+    @include mq(sp) {
+      font-size: 18px;
+    }
+  }
+}

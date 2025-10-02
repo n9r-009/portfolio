@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+// -----------------------
+// colors
+// -----------------------
+//テキスト
+$text-base-color: #333333;
+$text-change-color: #333333;
+
+//背景
+$bg-grey-color: #fcf9f7;
+
+//アクセント
+$main-color: #226a3f;
+
+//ボーダー
+$border-base-color: #d3d3d3;
+
+//汎用
+$white-color: #ffffff;
+$black-color: #000000;
+$sub-color-grey: #e5e5e5;
+$silver-color: #bec2cb;
+$ocher-color: #c2be62;
+// -----------------------
+// imgPath
+// -----------------------
+$imgPath: "../";
+
+// acd
+$version: "2024" +#{random(9999)};
+$acd: "?" + $version;

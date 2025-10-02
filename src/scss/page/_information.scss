@@ -1,0 +1,172 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*==========================
+お知らせ
+.p-information
+==========================*/
+.p-information {
+  // 一覧
+  &-archive {
+    .l-main__spacer {
+      padding: 80px 0 160px;
+      @include mq(sp) {
+        padding: 60px 0 100px;
+      }
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px 20px;
+      &Item {
+        width: calc(100% / 4 - 15px);
+        @include mq(pcsub) {
+          width: calc(100% / 3 - 14px);
+        }
+        @include mq(sp) {
+          width: calc(100% / 2 - 10px);
+        }
+      }
+    }
+    &-service {
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px 20px;
+        &Item {
+          width: calc(100% / 4 - 15px);
+          @include mq(pcsub) {
+            width: calc(100% / 3 - 14px);
+          }
+          @include mq(sp) {
+            width: calc(100% / 2 - 10px);
+          }
+        }
+      }
+    }
+    .m-card {
+      width: 100%;
+      &__data {
+        color: $text-base-color;
+      }
+      &__tit {
+        color: $text-base-color;
+      }
+    }
+  }
+  // 詳細
+  &-single {
+    .l-mv-under__img {
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #fff, $alpha: 0.4);
+        backdrop-filter: blur(4px);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .l-main__spacer {
+      padding: 85px 0 140px;
+      @include mq(sp) {
+        padding: 60px 0 145px;
+      }
+    }
+    &-content {
+      &__tit {
+        padding-bottom: 18px;
+        text-align: left;
+        color: $main-color;
+        border-bottom: 1px solid $border-base-color;
+        font-size: 32px;
+        line-height: 1.4;
+        @include mq(sp) {
+          padding-top: 12px;
+          font-size: 24px;
+          @include letter-spacing-calc(40);
+        }
+      }
+      &__result {
+        margin-top: 40px;
+        text-align: left;
+        @include mq(sp) {
+          margin-top: 40px;
+        }
+        h1 {
+          font-size: 26px;
+          @include line-height-calc(48, 26);
+          font-weight: bold;
+          @include mq(sp) {
+            font-size: 22px;
+          }
+        }
+        h2 {
+          font-size: 24px;
+          @include line-height-calc(48, 24);
+          font-weight: bold;
+          @include mq(sp) {
+            font-size: 20px;
+          }
+        }
+        h3 {
+          font-size: 24px;
+          @include line-height-calc(48, 24);
+          font-weight: bold;
+          @include mq(sp) {
+            font-size: 20px;
+          }
+        }
+        h4 {
+          font-size: 22px;
+          @include line-height-calc(48, 22);
+          font-weight: bold;
+          @include mq(sp) {
+            font-size: 20px;
+          }
+        }
+        h5 {
+          font-size: 20px;
+          @include line-height-calc(48, 20);
+          font-weight: bold;
+          @include mq(sp) {
+            font-size: 18px;
+          }
+        }
+        h6 {
+          font-size: 18px;
+          @include line-height-calc(48, 18);
+          font-weight: bold;
+          @include mq(sp) {
+            font-size: 16px;
+          }
+        }
+        p {
+          font-size: 16px;
+          line-height: 1.8;
+          @include mq(sp) {
+            font-size: 14px;
+          }
+        }
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          margin-top: 10px;
+        }
+        a {
+          @include hvopa;
+        }
+      }
+
+      .m-button {
+        margin-top: 60px;
+        @include mq(sp) {
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+}
